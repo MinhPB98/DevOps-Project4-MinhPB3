@@ -12,13 +12,9 @@ AWS_REGION="us-east-1"
 # Run the Docker Hub container with kubernetes
 # 1 create secret to connect to private image registry
 kubectl create secret docker-registry awscreds \
-  --docker-server=${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com \
+  --docker-server=https://976245815270.dkr.ecr.us-east-1.amazonaws.com \
   --docker-username=AWS \
-  --docker-password=$(aws ecr get-login-password \                     
-    --region us-east-1 \
-| docker login \
-    --username AWS \
-    --password-stdin 976245815270.dkr.ecr.us-east-1.amazonaws.com) \
+  --docker-password=$(aws ecr get-login-password --region us-east-1 )
 
 kubectl apply -f deployment.yaml
 kubectl expose deployment project-4-udacity --port=80 --name=service-project-4-udacity
