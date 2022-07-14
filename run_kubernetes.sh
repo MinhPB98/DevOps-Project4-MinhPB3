@@ -17,7 +17,6 @@ kubectl create secret docker-registry awscreds \
   --docker-password=$(aws ecr get-login-password --region us-east-1 )
 
 kubectl apply -f deployment.yaml
-kubectl expose deployment project-4-udacity --port=80 --name=service-project-4-udacity
 
 # Step 3:
 # List kubernetes pods
@@ -25,4 +24,4 @@ kubectl get pods -A
 
 # Step 4:
 # Forward the container port to a host
-kubectl expose deployment project-4-udacity --type=LoadBalancer --port=8080 --target-port=80
+kubectl apply -f service.yaml

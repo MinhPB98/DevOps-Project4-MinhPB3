@@ -5,7 +5,7 @@ metadata:
   labels:
     app: project-4-udacity
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: project-4-udacity
