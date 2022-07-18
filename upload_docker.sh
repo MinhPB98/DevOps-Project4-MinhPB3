@@ -11,7 +11,7 @@ mydockerpath="976245815270.dkr.ecr.us-east-1.amazonaws.com/project-4-minhpb3"
 # Authenticate & tag
 echo "Docker ID and Image: $mydockerpath"
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 976245815270.dkr.ecr.us-east-1.amazonaws.com
-docker tag project-4-minhpb3:latest 976245815270.dkr.ecr.us-east-1.amazonaws.com/project-4-minhpb3:latest
+docker tag project-4-minhpb3:lastest 976245815270.dkr.ecr.us-east-1.amazonaws.com/project-4-minhpb3:lastest
 # Step 3:
 # Push image to a docker repository
-docker push 976245815270.dkr.ecr.us-east-1.amazonaws.com/project-4-minhpb3:latest
+docker push 976245815270.dkr.ecr.us-east-1.amazonaws.com/project-4-minhpb3:lastest
