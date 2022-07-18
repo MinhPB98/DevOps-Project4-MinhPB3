@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: project4-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 8080
       targetPort: 80
-      nodePort: 30039
       name: port-kube
       protocol: TCP
   selector:
